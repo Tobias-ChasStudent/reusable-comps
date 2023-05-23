@@ -4,6 +4,7 @@ import './App.css'
 import Label from "./components/Label.jsx"
 import Input from "./components/Input.jsx"
 import Button from "./components/Button.jsx"
+import LinkList from './components/LinkList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,15 +17,17 @@ function App() {
     color: "#000000",
     background: "#32CD32"
   }
+  const socialLinks = ["Facebook", "Instagram", "Messenger"]
+  const navLinks = ["Home", "About", "Contact"]
 
   return (
     <div className="App">
       <h1>My component library</h1>
-
+      <hr />
       <Label text="Full name">
         <Input placeholder="Sven Svensson" type="text" />
       </Label>
-
+      <hr />
       <div className="checkboxes">
         <Label text="Gender" />
         <br />
@@ -39,7 +42,7 @@ function App() {
         <Label htmlFor="Other">Other</Label>
         <Input name="Other" type="checkbox" />
       </div>
-
+      <hr />
       <Button
         type="button"
         style={normalBtn}
@@ -53,6 +56,9 @@ function App() {
       >
         Submit
       </Button>
+      <hr />
+      <LinkList links={socialLinks} />
+      <LinkList links={navLinks} />
     </div>
   )
 }
